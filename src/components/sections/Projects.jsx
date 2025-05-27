@@ -63,7 +63,7 @@ export const Projects = () => {
                             <h3 className="text-xl font-bold mb-2">Cloud Platform</h3>
                             <p className="text-gray-400 mb-4">
                                 Short Title of the projects that goes into detail about how much
-                                exciting stuff that was in there and what tech I used to do it YES.
+                                exciting stuff that was in there and what tech I used to do it YES another change.
                             </p>
                             <div className="flex flex-wrap gap-2 mb-4">
                                 {["React", "Node.js", "UX"].map((skill, key) => (
