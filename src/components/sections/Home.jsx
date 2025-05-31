@@ -15,15 +15,15 @@ export const Home = () => {
                         Hej, I'm Elias!
                     </h1>
 
-                    <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
-                        I'm a UX engineer who believes great products start with understanding people.
+                    <p className="nocursor text-gray-400 text-lg mb-8 max-w-lg mx-auto">
+                        I'm a UX Engineer who believes great products start with understanding people.
                         Through rigorous user research and human-centered design, I create digital solutions that
                         don't just look good, they solve real problems and enhance how professionals accomplish their
                         most important work.
                     </p>
                     <div className="flex justify-center px-4 mt-6 md:mt-20">
                         <a href="#projects"
-                           className="relative inline-flex items-center justify-center transition
+                           className="nocursor relative inline-flex items-center justify-center transition
                                       hover:-translate-y-0.5 group">
                             <ButtonDrop className="w-22 h-auto svg-hover-shadow"/>
                             <span

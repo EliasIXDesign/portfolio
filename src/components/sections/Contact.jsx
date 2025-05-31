@@ -37,7 +37,7 @@ export const Contact = () => {
                     <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-[#A1BF36] to-[#FAED7D] bg-clip-text text-transparent text-center">
                         Get In Touch
                     </h2>
-                    <form className="space-y-6" onSubmit={handleSubmit}>
+                    <form className="nocursor space-y-6" onSubmit={handleSubmit}>
                         <div className="relative">
                             <input
                             type="text"
@@ -83,7 +83,8 @@ export const Contact = () => {
 
                         <button
                         type="submit"
-                        className="w-full bg-[#2b7fff1a] text-[#FAED7D] py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                        className="w-full bg-[#2b7fff1a] text-[#FAED7D] py-3 px-6 rounded font-medium transition
+                        relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_08px_rgba(59,130,246,0.4)]"
                         >
                             Send Message
                         </button>

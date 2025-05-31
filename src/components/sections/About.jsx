@@ -30,7 +30,7 @@ export const About = () => {
                         About me
                     </h2>
 
-                    <div className="rounded-xl p-8 border-white/10 border hover:translate-y-1 transition-all">
+                    <div className="nocursor rounded-xl p-8 border-white/10 border hover:translate-y-1 transition-all">
                         <p className="text-gray-300 mb-6">
                             I design digital experiences that solve real problems for users and businesses
                         </p>
@@ -73,12 +73,12 @@ export const About = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div className="nocursor grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                         <div className="p-6 rounded-xl border-white/10 border hover:translate-y-1 transition-all">
                             <h3 className="text-xl font-bold mb-4">Education</h3>
                             <ul className="list-disc list-inside text-gray-300 space-y-2">
                                 <li> {/*Education 1*/}
-                                    <span className="bg-blue-500/10 text-[#FAED7D] py-1 px-3 rounded-full text-sm
+                                    <span className="bg-blue-500/10 text-[#FAED7D] py-1 px-3 rounded-full text-base
                                           hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
                                         Master's in Interaction Design
                                     </span>
@@ -92,7 +92,7 @@ export const About = () => {
                                 </li>
 
                                 <li> {/*Education 2*/}
-                                    <span className="bg-blue-500/10 text-[#FAED7D] py-1 px-3 rounded-full text-sm
+                                    <span className="bg-blue-500/10 text-[#FAED7D] py-1 px-3 rounded-full text-base
                                           hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
                                         Bachelor's in Interaction Design
                                     </span>
@@ -111,7 +111,7 @@ export const About = () => {
                             <ul className="list-disc list-inside text-gray-300 space-y-2">
 
                                 <li> {/*Work Experience 1,2...*/}
-                                    <span className="bg-blue-500/10 text-[#FAED7D] py-1 px-3 rounded-full text-sm
+                                    <span className="bg-blue-500/10 text-[#FAED7D] py-1 px-3 rounded-full text-base
                                           hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
                                         UX Researcher at the LEGO Group
                                     </span> <br/>
@@ -123,7 +123,7 @@ export const About = () => {
                                     </span>
                                 </li>
                                 <li>
-                                    <span className="bg-blue-500/10 text-[#FAED7D] py-1 px-3 rounded-full text-sm
+                                    <span className="bg-blue-500/10 text-[#FAED7D] py-1 px-3 rounded-full text-base
                                           hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
                                         UX Internship at the LEGO Group
                                     </span> <br/>

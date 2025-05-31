@@ -6,3 +6,19 @@
  Background Black: #080808;
  White Text Color: #f3f4f6;
  */
+
+.App {
+    position: relative;
+    z-index: 0; /* Base layer */
+}
+
+#home, #about, #projects, #contact {
+    position: relative;
+    z-index: 2; /* Above cursor */
+}
+
+/* Text elements specifically */
+.App h1, .App h2, .App h3, .App p, .App span {
+    position: relative;
+    z-index: 2;
+}

@@ -8,6 +8,7 @@ import {Home} from "./components/sections/Home.jsx";
 import {About} from "./components/sections/About.jsx";
 import {Projects} from "./components/sections/Projects.jsx";
 import {Contact} from "./components/sections/Contact.jsx";
+import CustomCursor from "./components/CustomCursor.jsx";
 
 function App() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -28,6 +29,7 @@ function App() {
 
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <CustomCursor/>
         <Home />
         <About />
         <Projects />

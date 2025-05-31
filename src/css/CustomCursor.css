@@ -1,0 +1,19 @@
+/* Hide default cursor */
+html, body {
+    cursor: none;
+}
+
+/* Custom cursor - white filled circle */
+.custom-cursor {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #A1BF36 0%, #FAED7D 100%);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+}
