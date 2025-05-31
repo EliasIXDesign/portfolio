@@ -113,7 +113,7 @@ export const About = () => {
                                 <li> {/*Work Experience 1,2...*/}
                                     <span className="bg-blue-500/10 text-[#FAED7D] py-1 px-3 rounded-full text-sm
                                           hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
-                                        Researcher at the LEGO Group
+                                        UX Researcher at the LEGO Group
                                     </span> <br/>
                                     <i>Billund (2023-2025)</i>
                                     <br/>
