@@ -15,10 +15,15 @@ function App() {
 
   return (
     <>
-        {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
+        {!isLoaded && (
+            <div className="hidden lg:block">
+            <LoadingScreen onComplete={() => setIsLoaded(true)}/>
+            </div>
+        )}
+
         <div className={`min-h-screen transition-opacity duration-700 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-            } bg-black text-gray-100`}
+            isLoaded ? 'opacity-100' : 'opacity-100 lg:opacity-0'
+            } bg-[#080808] text-gray-100`}
         >
 
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />

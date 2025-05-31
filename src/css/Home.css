@@ -1,0 +1,10 @@
+.svg-hover-shadow {
+    --svg-fill: #2b7fff1a;
+    filter: drop-shadow(0 0 0px #474747);
+    transition: filter 0.2s ease;
+}
+
+.group:hover .svg-hover-shadow {
+    --svg-fill: #2b7fff33;
+    filter: drop-shadow(0 0 4px #474747) ;
+}
