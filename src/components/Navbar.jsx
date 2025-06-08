@@ -1,4 +1,5 @@
 import {useEffect} from "react";
+import LanguageToggle from "./LanguageToggle.jsx";
 
 export const Navbar = ({menuOpen, setMenuOpen}) => {
     useEffect(() => {
@@ -19,20 +20,22 @@ export const Navbar = ({menuOpen, setMenuOpen}) => {
                     &#9776;
                 </div>
 
-                {/*Mobile Menu Contents*/}
-                <div className="hidden md:flex items-center space-x-8">
+                <div className="hidden ml-6 md:flex items-center space-x-8">
                     <a href="#home" className="text-gray-300 hover:text-white transition-colors">
                         Home
                     </a>
-                    <a href="#about" className="text-gray-300 hover:text-white transition-colors">
-                        About
-                    </a>
-                    <a href="#projects" className="text-gray-300 hover:text-white transition-colors">
-                        Projects
+                    <a href="#toolkit" className="text-gray-300 hover:text-white transition-colors">
+                        My Toolkit
                     </a>
                     <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
                         Contact
                     </a>
+                    <a href="/CVeliasCHRISTIANSEN.pdf" download="Elias-CV.pdf" target="_blank" rel="noopener noreferrer"
+                       className="text-gray-300 hover:text-white transition-colors">
+                        Download CV
+                    </a>
+
+                    <LanguageToggle className="ml-4" />
                 </div>
             </div>
         </div>

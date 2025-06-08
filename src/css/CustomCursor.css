@@ -3,7 +3,7 @@ html, body {
     cursor: none;
 }
 
-/* Custom cursor - white filled circle */
+/* Custom cursor - filled circle */
 .custom-cursor {
     width: 70px;
     height: 70px;

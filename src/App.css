@@ -22,3 +22,12 @@
     position: relative;
     z-index: 2;
 }
+
+::selection {
+    background: #fbc308; /* Your desired highlight color */
+    color: black;        /* Text color when selected */
+}
+::-moz-selection {      /* For Firefox compatibility */
+    background: #fbc308;
+    color: black;
+}

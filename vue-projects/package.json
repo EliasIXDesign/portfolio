@@ -8,7 +8,6 @@
     "build": "vite build --base=/projects/",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build",
     "lint": "eslint . --fix"
   },
   "dependencies": {
@@ -17,17 +16,17 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
-    "@types/node": "^22.14.0",
     "@vitejs/plugin-vue": "^5.2.3",
-    "@vue/eslint-config-typescript": "^14.5.0",
     "@vue/tsconfig": "^0.7.0",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.22.0",
     "eslint-plugin-vue": "~10.0.0",
     "jiti": "^2.4.2",
     "npm-run-all2": "^7.0.2",
-    "typescript": "~5.8.0",
+    "postcss": "^8.5.4",
+    "sass-embedded": "^1.89.1",
+    "tailwindcss": "^4.1.8",
     "vite": "^6.2.4",
-    "vite-plugin-vue-devtools": "^7.7.2",
-    "vue-tsc": "^2.2.8"
+    "vite-plugin-vue-devtools": "^7.7.2"
   }
 }
