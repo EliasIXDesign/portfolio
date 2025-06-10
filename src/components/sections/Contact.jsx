@@ -2,6 +2,9 @@ import {RevealOnScroll} from "../RevealOnScroll.jsx";
 import emailjs from 'emailjs-com'
 import {useState} from "react";
 import { useTranslation } from 'react-i18next';
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import CopyMailDialog from '../FloatingDialog'; // Import your dialog
+import { useFloating, autoUpdate, offset, flip, shift, useDismiss, useInteractions } from '@floating-ui/react';
 
 export const Contact = () => {
     const [formData, setFormData] = useState({
@@ -29,6 +32,33 @@ export const Contact = () => {
     }
 
     const { t } = useTranslation();
+
+    /*Floating UI*/
+
+    const [showEmailDialog, setShowEmailDialog] = useState(false);
+    const [copyStatus, setCopyStatus] = useState('');
+    const EMAIL = 'mail@eliasixd.com';
+
+    const { refs, floatingStyles, context } = useFloating({
+        open: showEmailDialog,
+        onOpenChange: setShowEmailDialog,
+        middleware: [offset(10), flip(), shift()],
+        whileElementsMounted: autoUpdate,
+    });
+
+    const dismiss = useDismiss(context);
+    const { getFloatingProps } = useInteractions([dismiss]);
+
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(EMAIL);
+            setCopyStatus('Copied to clipboard!');
+            setTimeout(() => setCopyStatus(''), 2000);
+        } catch {
+            setCopyStatus('Failed to copy!');
+        }
+        setShowEmailDialog(false);
+    };
 
     return (
         <section
@@ -95,6 +125,60 @@ export const Contact = () => {
                             {t('sendmessage')}
                         </button>
                     </form>
+                </div>
+                <div className="nocursor flex justify-center gap-4 mt-12">
+                    {/* LinkedIn */}
+                    <a
+                        href="https://www.linkedin.com/in/elias-martin-christiansen-ixd"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#e4d7c0] text-[#563B21] rounded-full w-16 h-16 flex items-center justify-center shadow-md hover:bg-[#A1BF36] transition"
+                        aria-label="LinkedIn"
+                    >
+                        <FaLinkedin size={24} />
+                    </a>
+                    {/* GitHub */}
+                    <a
+                        href="https://github.com/EliasIXDesign"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#e4d7c0] text-[#563B21] rounded-full w-16 h-16 flex items-center justify-center shadow-md hover:bg-[#A1BF36] transition"
+                        aria-label="GitHub"
+                    >
+                        <FaGithub size={24} />
+                    </a>
+                    {/* Email */}
+                    <div className="relative">
+                        <button
+                            ref={refs.setReference}
+                            onClick={() => setShowEmailDialog(true)}
+                            className="bg-[#e4d7c0] text-[#563B21] rounded-full w-16 h-16 flex items-center
+                                        justify-center shadow-md hover:bg-[#A1BF36] transition"
+                            aria-label="Email"
+                        >
+                            <FaEnvelope size={24} />
+                        </button>
+
+                        {/* Dialog appears here */}
+                        {showEmailDialog && (
+                            <CopyMailDialog
+                                ref={refs.setFloating}
+                                email={EMAIL}
+                                onYes={handleCopy}
+                                onNo={() => setShowEmailDialog(false)}
+                                style={floatingStyles}
+                                {...getFloatingProps({})}
+                            />
+                        )}
+
+                        {/* Copy status feedback */}
+                        {copyStatus && (
+                            <div className="absolute top-20 left-1/2 transform -translate-x-1/2 text-center
+                                            text-sm text-black whitespace-nowrap">
+                                {copyStatus}
+                            </div>
+                        )}
+                    </div>
                 </div>
             </RevealOnScroll>
         </section>

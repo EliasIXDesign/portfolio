@@ -15,7 +15,7 @@ export const Navbar = ({menuOpen, setMenuOpen}) => {
 
                 {/*Mobile Menu (Burger)*/}
                 <div
-                    className="w-7 h-5 relative cursor-pointer z-40 md:hidden"
+                    className="w-7 h-5 relative cursor-pointer z-40 md:hidden text-white"
                     onClick={() => setMenuOpen((prev) => !prev)}>
                     &#9776;
                 </div>
