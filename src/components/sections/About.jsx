@@ -2,7 +2,7 @@ import {RevealOnScroll} from "../RevealOnScroll.jsx";
 import { useTranslation } from 'react-i18next';
 
 export const About = () => {
-    const frontendSkills = [
+    const productSkills = [
         "Figma",
         "React",
         "Vue.js",
@@ -48,9 +48,9 @@ export const About = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="rounded-xl p-6">
-                                <h3 className="text-xl font-bold mb-4 text-[#563B21]">UX Research</h3>
+                                <h3 className="text-xl font-bold mb-4 text-[#563B21]">Product Specialist</h3>
                                 <div className="flex flex-wrap gap-2">
-                                    {uxResearchSkills.map((skill, key) => (
+                                    {productSkills.map((skill, key) => (
                                         <span key={key}
                                               className="bg-[#563B211a] text-black py-1 px-3 rounded-full text-sm
                                                     hover:bg-[#FAED7D1a] hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
@@ -60,9 +60,9 @@ export const About = () => {
                                 </div>
                             </div>
                             <div className="rounded-xl p-6">
-                                <h3 className="text-xl font-bold mb-4 text-[#563B21]">Frontend Development</h3>
+                                <h3 className="text-xl font-bold mb-4 text-[#563B21]">UX Research</h3>
                                 <div className="flex flex-wrap gap-2">
-                                    {frontendSkills.map((skill, key) => (
+                                    {uxResearchSkills.map((skill, key) => (
                                         <span key={key}
                                               className="bg-[#563B211a] text-black py-1 px-3 rounded-full text-sm
                                                     hover:bg-[#FAED7D1a] hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
