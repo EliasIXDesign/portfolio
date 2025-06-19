@@ -1,124 +1,102 @@
-import {RevealOnScroll} from "../RevealOnScroll.jsx";
+import "../../css/Toolkit.css";
+import { useRef } from "react";
+import { RevealOnScroll } from "../RevealOnScroll.jsx";
 
 export const Toolkit = () => {
-    return(
-        <section
-            id="toolkit"
-            className="min-h-screen flex items-center justify-center py-20"
+    const DRAG_SENSITIVITY = 10; 
+    const scrollRef = useRef(null);
+    const isDown = useRef(false);
+    const startX = useRef(0);
+    const scrollLeft = useRef(0);
+    
+
+    const onMouseDown = (e) => {
+        isDown.current = true;
+        scrollRef.current.classList.add('cursor-grabbing');
+        startX.current = e.pageX - scrollRef.current.offsetLeft;
+        scrollLeft.current = scrollRef.current.scrollLeft;
+    };
+
+    const onMouseLeave = () => {
+        isDown.current = false;
+        scrollRef.current.classList.remove('cursor-grabbing');
+    };
+
+    const onMouseUp = () => {
+        isDown.current = false;
+        scrollRef.current.classList.remove('cursor-grabbing');
+    };
+
+    const onMouseMove = (e) => {
+        if (!isDown.current) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX.current) * DRAG_SENSITIVITY;
+        scrollRef.current.scrollLeft = scrollLeft.current - walk;
+    };
+
+    const cards = [
+        {
+        title: "Card Title 1",
+        image: "https://placehold.co/1080x1080",
+        paragraphs: [
+            "This is the first paragraph for card 1",
+            "This is the second paragraph for card 1"
+        ]
+        },
+        {
+        title: "Card Title 2",
+        image: "https://placehold.co/1080x1080",
+        paragraphs: [
+            "This is the first paragraph for card 2",
+            "This is the second paragraph for card 2"
+        ]
+        },
+        // Add more cards here
+    ];
+
+  return (
+    <section id="toolkit" className="w-full overflow-x-auto">
+      <RevealOnScroll>
+        <div
+          className="flex space-x-8 px-5 overflow-x-auto no-scrollbar select-none cursor-grab snap-x snap-mandatory scroll-smooth"
+          ref={scrollRef}
+          style={{ WebkitOverflowScrolling: "touch" }}
+          onMouseDown={onMouseDown}
+          onMouseLeave={onMouseLeave}
+          onMouseUp={onMouseUp}
+          onMouseMove={onMouseMove}
         >
-            <RevealOnScroll>
-                <div className="max-w-5xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold mb-8 text-[#563B21] text-center">
-                        My Toolkit
-                    </h2>
-                    <div className="nocursor grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                        {/*First Project*/}
-                        <div className="p-6 rounded-xl border border-[#563B21] hover:-translate-y-1
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
-                            <h3 className="text-xl font-bold mb-2">
-                                Remote and Interactive User Research Expertise
-                            </h3>
-                            <p className="mb-4">
-                                Short Title of the projects that goes into detail about how much
-                                exciting stuff that was in there and what tech I used to do it.
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["Design Research", "Interviews", "Observation", "Web Development"].map((skill, key) => (
-                                    <span key={key}
-                                          className="bg-[#563B211a] text-black py-1 px-3 rounded-full text-sm
-                                                    hover:bg-[#FAED7D1a] hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                            <div className="nocursor flex justify-between items-center">
-                                <a href="#" className="text-black hover:text-blue-300 transition-colors my-4">
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-
-                        {/*Second Project*/}
-                        <div className="p-6 rounded-xl border border-[#563B21] hover:-translate-y-1
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
-                            <h3 className="text-xl font-bold mb-2">
-                                From Research Results to Design Decisions
-                            </h3>
-                            <p className="text-black mb-4">
-                                Short Title of the projects that goes into detail about how much
-                                exciting stuff that was in there and what tech I used to do it.
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["User Research", "Prototyping", "Python", "UX"].map((skill, key) => (
-                                    <span key={key}
-                                          className="bg-[#563B211a] text-black py-1 px-3 rounded-full text-sm
-                                                    hover:bg-[#FAED7D1a] hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                            <div className="nocursor flex justify-between items-center">
-                                <a href="#" className="text-black hover:text-blue-300 transition-colors my-4">
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-
-                        {/*Third Project*/}
-                        <div className="p-6 rounded-xl border border-[#563B21] hover:-translate-y-1
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
-                            <h3 className="text-xl font-bold mb-2">
-                                Prototyping and Communication of Designs using Figma, Miro and More
-                            </h3>
-                            <p className="text-black mb-4">
-                                Short Title of the projects that goes into detail about how much
-                                exciting stuff that was in there and what tech I used to do it YES another change.
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["Remote User Research", "Design Research", "UX Research"].map((skill, key) => (
-                                    <span key={key}
-                                          className="bg-[#563B211a] text-black py-1 px-3 rounded-full text-sm
-                                                    hover:bg-[#FAED7D1a] hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                            <div className="nocursor flex justify-between items-center">
-                                <a href="#" className="text-black hover:text-blue-300 transition-colors my-4">
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-
-                        {/*Fourth Project*/}
-                        <div className="p-6 rounded-xl border border-[#563B21] hover:-translate-y-1
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
-                            <h3 className="text-xl font-bold mb-2">
-                                Web Development to Implement and Further Test Products and Services
-                            </h3>
-                            <p className="text-black mb-4">
-                                Short Title of the projects that goes into detail about how much
-                                exciting stuff that was in there and what tech I used to do it YES another change.
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["Figma", "UX", "Heuristic Evaluation"].map((skill, key) => (
-                                    <span key={key}
-                                          className="bg-[#563B211a] text-black py-1 px-3 rounded-full text-sm
-                                                    hover:bg-[#FAED7D1a] hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all">
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                            <div className="nocursor flex justify-between items-center">
-                                <a href="#" className="text-black hover:text-blue-300 transition-colors my-4">
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+          {cards.map((card, idx) => (
+            <div
+              key={idx}
+              className="flex-shrink-0 w-[80vw] h-[80vh] bg-white rounded-lg shadow-lg p-6 mx-5 snap-center"
+            >
+              <div className="flex flex-row items-start gap-6 h-full">
+                <div className="flex-1 flex flex-col justify-start">
+                  <h2 className="text-2xl font-bold mb-4">{card.title}</h2>
+                  <div>
+                    {card.paragraphs.map((text, i) => (
+                      <p key={i} className="mb-2 text-gray-700">
+                        {text}
+                      </p>
+                    ))}
+                  </div>
                 </div>
-            </RevealOnScroll>
-        </section>
-    )
-}
+                <div className="w-[40rem] h-[40rem] min-w-[20rem] min-h-[20rem] flex-shrink-0">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="object-cover w-full h-full rounded aspect-square"
+                    width={1080}
+                    height={1080}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </RevealOnScroll>
+    </section>
+  );
+};
