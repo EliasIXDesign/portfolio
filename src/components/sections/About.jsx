@@ -42,10 +42,6 @@ export const About = () => {
                             {t('p2aboutme')}
                         </p>
 
-                        <p className="text-black mb-6">
-                            {t('p3aboutme')}
-                        </p>
-
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="rounded-xl p-6">
                                 <h3 className="text-xl font-bold mb-4 text-[#563B21]">Product Specialist</h3>
