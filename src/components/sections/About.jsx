@@ -3,11 +3,12 @@ import { useTranslation } from 'react-i18next';
 
 export const About = () => {
     const productSkills = [
-        "Figma",
-        "React",
-        "Vue.js",
-        "Tailwind CSS",
-        "SharePoint",
+        "Project Managment",
+        "Market Research",
+        "Scrum",
+        "Product Metrics",
+        "Jira/Confluence",
+        "Miro",
         "PowerBi",
     ];
 
@@ -18,6 +19,7 @@ export const About = () => {
       "A/B Testing",
       "Usability Testing",
       "Workshops",
+      "Google Analytics",
     ];
 
     const { t } = useTranslation();

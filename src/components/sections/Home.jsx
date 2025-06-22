@@ -23,13 +23,13 @@ export const Home = () => {
                         {t('introtext')}
                     </p>
                     <div className="flex justify-center px-4 mt-6 md:mt-20">
-                        <a href="#about"
+                        <a href="#toolkit"
                            className="nocursor relative inline-flex items-center justify-center transition
                                       hover:-translate-y-0.5 group">
                             <ButtonDrop className="w-25 h-auto svg-hover-shadow"/>
                             <span
                                 className="absolute inset-0 flex items-center justify-center text-[#563B21] font-bold z-10 -translate-y-3">
-                                {t('aboutme')}
+                                My Toolkit
                             </span>
                         </a>
                     </div>

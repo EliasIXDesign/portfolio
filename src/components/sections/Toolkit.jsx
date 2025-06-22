@@ -1,6 +1,9 @@
 import React from "react";
 import "../../css/Toolkit.css";
 import Card1 from "../../../src/assets/Card1.svg";
+import Card2 from "../../../src/assets/Card2.svg";
+import Card3 from "../../../src/assets/Card3.svg";
+import Card4 from "../../../src/assets/Card4.svg";
 import { useRef } from "react";
 import { RevealOnScroll } from "../RevealOnScroll.jsx";
 
@@ -38,12 +41,9 @@ export const Toolkit = () => {
 
     const cards = [
         { svg: <img src={Card1} alt="Card 1" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
-        { svg: <img src={Card1} alt="Card 1" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
-        { svg: <img src={Card1} alt="Card 1" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
-        { svg: <img src={Card1} alt="Card 1" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
-        { svg: <img src={Card1} alt="Card 1" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
-
-        
+        { svg: <img src={Card2} alt="Card 2" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
+        { svg: <img src={Card3} alt="Card 3" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
+        { svg: <img src={Card4} alt="Card 4" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
     ];
 
     return (
