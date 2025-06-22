@@ -1,6 +1,7 @@
 import './App.css'
 import "./index.css";
 import "./i18n.js"
+import Footer from './components/Footer.jsx';
 import {useState} from "react";
 import { LoadingScreen } from './components/LoadingScreen.jsx';
 import { Navbar } from './components/Navbar.jsx';
@@ -37,6 +38,7 @@ function App() {
         <About />
         <Toolkit />
         <Contact />
+        <Footer />
         </div>
     </>
   );

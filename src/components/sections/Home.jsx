@@ -1,5 +1,4 @@
-// noinspection JSCheckFunctionSignatures
-
+import React from 'react';
 import "../../css/Home.css";
 import {RevealOnScroll} from "../RevealOnScroll.jsx";
 import ButtonDrop from "../../assets/buttonDrop.svg?react";
