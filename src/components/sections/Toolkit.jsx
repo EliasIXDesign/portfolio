@@ -4,15 +4,28 @@ import Card1 from "../../../src/assets/Card1.svg";
 import Card2 from "../../../src/assets/Card2.svg";
 import Card3 from "../../../src/assets/Card3.svg";
 import Card4 from "../../../src/assets/Card4.svg";
-import { useRef } from "react";
+import Card5 from "../../../src/assets/Card5.svg";
+import { useRef, useEffect, useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll.jsx";
+
+
+
+function shuffleArray(array) {
+    const arr = [...array]; // create a shallow copy to avoid mutating original
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
 
 export const Toolkit = () => {
     const scrollRef = useRef(null);
     const isDown = useRef(false);
     const startX = useRef(0);
     const scrollLeft = useRef(0);
-    const DRAG_SENSITIVITY = 2; 
+    const DRAG_SENSITIVITY = 2;
 
     const onMouseDown = (e) => {
         isDown.current = true;
@@ -22,12 +35,12 @@ export const Toolkit = () => {
     };
 
     const onMouseMove = (e) => {
-    if (!isDown.current) return;
-    e.preventDefault();
-    const x = e.pageX;
-    const walk = (x - startX.current) * DRAG_SENSITIVITY; // Multiply by sensitivity
-    scrollRef.current.scrollLeft = scrollLeft.current - walk;
-};
+        if (!isDown.current) return;
+        e.preventDefault();
+        const x = e.pageX;
+        const walk = (x - startX.current) * DRAG_SENSITIVITY; // Multiply by sensitivity
+        scrollRef.current.scrollLeft = scrollLeft.current - walk;
+    };
 
 
     const onMouseUp = () => {
@@ -44,7 +57,14 @@ export const Toolkit = () => {
         { svg: <img src={Card2} alt="Card 2" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
         { svg: <img src={Card3} alt="Card 3" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
         { svg: <img src={Card4} alt="Card 4" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
+        { svg: <img src={Card5} alt="Card 5" className="w-full h-full object-contain" draggable="false" onDragStart={(e) => e.preventDefault()} /> },
     ];
+
+    const [shuffleCards, setShuffleCards] = useState([]);
+
+    useEffect(()=> {
+        setShuffleCards(shuffleArray(cards));
+    }, []);
 
     return (
         <section id="toolkit" className="min-h-screen flex items-center justify-center py-20">
@@ -59,7 +79,7 @@ export const Toolkit = () => {
                         onMouseUp={onMouseUp}
                         onMouseMove={onMouseMove}
                     >
-                        {cards.map((card, idx) => (
+                        {shuffleCards.map((card, idx) => (
                             <div
                                 key={idx}
                                 className="flex-shrink-0 w-[555px] h-[555px] bg-white rounded-lg shadow-lg p-0 snap-center flex items-center justify-center"
